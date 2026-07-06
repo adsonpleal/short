@@ -1,0 +1,15 @@
+# Compiled binaries
+/short
+/short-linux
+*.exe
+
+# Link database (local + never commit server data)
+*.db
+
+# Deploy skill contains server details (IP, SSH key path) — kept local on purpose
+.claude/skills/deploy/
+.claude/settings.local.json
+
+# OS junk
+Thumbs.db
+.DS_Store
