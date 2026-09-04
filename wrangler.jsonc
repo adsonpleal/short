@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "short",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-22",
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "vars": {
+    "BASE_URL": "https://short.latam-tools.com.br",
+    "REDIRECT_CACHE_TTL": "300"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "short",
+      // Filled in from `npx wrangler d1 create short`.
+      "database_id": "686dce1d-d567-4108-8f11-0b825878f000"
+    }
+  ],
+  // A zone route, not a custom_domain: the hostname is proxied first, so attaching
+  // the Worker needs no DNS change and no certificate provisioning window.
+  "routes": [
+    { "pattern": "short.latam-tools.com.br/*", "zone_name": "latam-tools.com.br" }
+  ]
+}

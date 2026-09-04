@@ -1,6 +1,7 @@
 # Compiled binaries
 /short
 /short-linux
+/export
 *.exe
 
 # Link database (local + never commit server data)
@@ -13,3 +14,13 @@
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Cloudflare Worker
+node_modules/
+.wrangler/
+.dev.vars
+worker-configuration.d.ts
+
+# Migration working directory: bbolt snapshots, exports, D1 backups, transcripts.
+# Contains the only offline copies of the link data — keep the files, not in git.
+/migration/

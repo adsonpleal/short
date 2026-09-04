@@ -1,7 +1,0 @@
-# URL shortener (short.service, port 8081).
-# Deployed to /etc/caddy/conf.d/short.caddy — the main Caddyfile is a stub that
-# imports conf.d/*.caddy, so each project owns its own site block. This file used to
-# live in the ragassets repo's Caddyfile alongside two unrelated services.
-short.latam-tools.com.br {
-	reverse_proxy localhost:8081
-}
